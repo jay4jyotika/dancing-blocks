@@ -1,0 +1,98 @@
+
+<html>
+<head>
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="main.css"> 
+</head>
+<body>
+	<section class="sidebar">
+		<ul class="main-nav">
+			<li class="collapse"><a href="#spin">Spinaroo</a></li>
+			<div class="content">
+				<p>this is spinaroo</br>it spins round and round</p>
+			</div>
+			<li class="collapse"><a href="#flip">Fliparoo</a></li>
+			<div class="content">
+				<p>this is fliparoo</br>it flips</p>
+			</div>
+			<li class="collapse"><a href="#stop">ShowStopper</a></li>
+			<div class="content">
+				<p>this is ShowStopper</br>* whispers * it stops xD</p>
+			</div>
+			<li class="collapse"><a href="#shrink">Shrinky</a></li>
+			<div class="content">
+				<p>this is shrinky<br>it shrinks</p>
+			</div>
+		</ul>
+		<button onclick="topFunction()" id="top" title="Go to top">Top</button>
+
+	</section> 
+	<section class="header">
+		<h1 class="logo"><a href="index.html">The Dancing Blocks</a></h1>
+	</section> 
+	<section class="main windows">
+		<div class="popover intro" id="spin">
+			
+			<img src="imgs/spin.png">
+		</div>
+		<div class="popover flip" id="flip" style="box-shadow: none;">
+			<div class="flip-inner">
+				<span class="flip-front">
+					<img src="imgs/flip-front.png">				
+				</span>
+				<span class="flip-back">
+					<img src="imgs/flip-back.png">
+				</span>
+			</div>
+		</div>
+		<div class="popover stop" id="stop">
+			<img src="imgs/stop.png">
+		</div>
+		<div class="popover shrink" id="shrink">
+			<img src="imgs/happy.png" class="happy">
+			<img src="imgs/sad.png" class="sad">
+		</div>
+	</section>
+
+
+</body>
+
+
+<script>
+var gototop = document.getElementById("top");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    gototop.style.display = "block";
+  } else {
+    gototop.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+var coll = document.getElementsByClassName("collapse");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("mouseover", function() {
+    var content = this.nextElementSibling;
+    content.style.display = "block"
+  });
+  coll[i].addEventListener("mouseleave", function() {
+    var content = this.nextElementSibling;
+    content.style.display = "none"
+  });
+}
+
+
+
+</script>
+
+
+</html>
